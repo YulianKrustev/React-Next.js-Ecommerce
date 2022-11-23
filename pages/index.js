@@ -4,17 +4,16 @@ import { client } from '../lib/client'
 import { Product, FooterBanner, HeroBanner }
   from "../components"
 
-const Home = (products, bannerData) => (
+const Home = (products) => (
   <div>
-    <HeroBanner />
-
+    <HeroBanner heroBanner={products.bannerData.length && products.bannerData[0]} />
     <div className='products-heading'>
       <h2>Best Selling Products</h2>
       <p>Speakers of many variations</p>
     </div>
 
     <div className='products-container'>
-      {console.log(bannerData)}
+      {products?.products.map((product) => product.name)}
     </div>
 
     < FooterBanner />
