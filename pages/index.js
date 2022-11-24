@@ -13,7 +13,7 @@ const Home = (products) => (
     </div>
 
     <div className='products-container'>
-      {products?.products.map((product) => product.name)}
+      {products?.products.map((product) => <Product key={product._id} product={product} />)}
     </div>
 
     < FooterBanner />
